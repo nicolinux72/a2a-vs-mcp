@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "mcp-a2a-client"
+version = "0.1.0"
+description = "Client MCP con integrazione della libreria Python a2a"
+authors = ["Nicola Santi <nicola@nicolasanti.it>"]
+readme = "README.md"
+packages = [{ include = "mcp_a2a_client" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+google-adk = {extras = ["a2a"], version = "*"}
+python-dotenv = "^1.0.0"
+requests = "^2.32.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
