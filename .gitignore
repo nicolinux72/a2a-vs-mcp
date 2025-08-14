@@ -1,11 +1,11 @@
 __pycache__/
 .env
 
-
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+**/.gradle-old/
 
 ### STS ###
 .apt_generated

@@ -8,12 +8,17 @@ load_dotenv()
 root_agent = Agent(
     name="sentiment_agent",
     model="gemini-2.0-flash",
-    description="A specialized agent for sentiment analysis that evaluates the emotional tone of text on a scale from 1 (friendly) to 5 (furious).",
+    description="A specialized agent for sentiment analysis that evaluates the hostility "
+                "tone of user request on a scale from 1 (friendly) to 10 (furious).",
     instruction="""
-        You are a sentiment analysis agent.
-        Read the provided text and return only a JSON object:
-        {"sentiment_level": n}
-        where n is an integer between 1 (friendly) and 5 (furious).
+        You are a sentiment analysis agent. 
+        Read the provided customer request and return *only* a JSON object
+        like the following:
+        {   
+            "costumer_request": "the original customer request",
+            "hostility_degree": n
+        }
+        Where n is an integer between 1 (friendly) and 10 (furious).
     """
 
 )
