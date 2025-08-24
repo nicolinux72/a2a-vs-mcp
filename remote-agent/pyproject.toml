@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "mcp-a2a-client"
+name = "remote-agent"
 version = "0.1.0"
 description = "Client MCP con integrazione della libreria Python a2a"
 authors = ["Nicola Santi <nicola@nicolasanti.it>"]
 readme = "README.md"
-packages = [{ include = "mcp_a2a_client" }]
+packages = [{ include = "remote_agent" }]
 
 [tool.poetry.dependencies]
 python = "^3.10"

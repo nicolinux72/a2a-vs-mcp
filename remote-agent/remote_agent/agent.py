@@ -20,10 +20,7 @@ root_agent = Agent(
         }
         Where n is an integer between 1 (friendly) and 10 (furious).
     """
-
 )
 
 # Crea l'app A2A e serve l'agente su uvicorn
 a2a_app = to_a2a(root_agent, port=8001)
-
-# poetry run uvicorn a2a_agent.agent:a2a_app --host localhost --port 8001
