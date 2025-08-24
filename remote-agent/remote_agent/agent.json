@@ -1,0 +1,26 @@
+{
+  "capabilities": {},
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "description": "A specialized agent for sentiment analysis that evaluates the hostility tone of user request on a scale from 1 (friendly) to 10 (furious).",
+  "name": "sentiment_agent",
+  "preferredTransport": "JSONRPC",
+  "protocolVersion": "0.3.0",
+  "skills": [
+    {
+      "description": "A specialized agent for sentiment analysis that evaluates the hostility tone of user request on a scale from 1 (friendly) to 10 (furious). \n        I am a sentiment analysis agent.         \n    ",
+      "id": "sentiment_agent",
+      "name": "model",
+      "tags": [
+        "llm"
+      ]
+    }
+  ],
+  "supportsAuthenticatedExtendedCard": false,
+  "url": "http://localhost:8000",
+  "version": "0.0.1"
+}

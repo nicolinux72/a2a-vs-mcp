@@ -1,9 +1,17 @@
 from dotenv import load_dotenv
 from google.adk.agents import Agent
 from google.adk.a2a.utils.agent_to_a2a import to_a2a
+from google.adk.agents.llm_agent import LlmAgent
+from pydantic import BaseModel, Field
+from google.adk.agents.remote_a2a_agent import AGENT_CARD_WELL_KNOWN_PATH
 
 # Load environment variables from .env file
 load_dotenv()
+
+
+class Response(BaseModel):
+    costumer_request: str = Field(description="the original customer request")
+    hostility_degree: int = Field(description="the hostility tone of user request on a scale from 1 (friendly) to 10 (furious)")
 
 root_agent = Agent(
     name="sentiment_agent",
@@ -11,15 +19,9 @@ root_agent = Agent(
     description="A specialized agent for sentiment analysis that evaluates the hostility "
                 "tone of user request on a scale from 1 (friendly) to 10 (furious).",
     instruction="""
-        You are a sentiment analysis agent. 
-        Read the provided customer request and return *only* a JSON object
-        like the following:
-        {   
-            "costumer_request": "the original customer request",
-            "hostility_degree": n
-        }
-        Where n is an integer between 1 (friendly) and 10 (furious).
-    """
+        You are a sentiment analysis agent.         
+    """,
+    output_schema=Response,
 )
 
 # Crea l'app A2A e serve l'agente su uvicorn
