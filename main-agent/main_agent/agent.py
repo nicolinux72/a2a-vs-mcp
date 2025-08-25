@@ -19,9 +19,9 @@ mcp_toolset = MCPToolset(
 tracking_agent = Agent(
     name="helpdesk_agent",
     model="gemini-2.0-flash",
-    description=("Helpdesk agent of GeoPost express courier companyservice"),
+    description=("Helpdesk agent of Mercurio express courier companyservice"),
     instruction=
-        """You are a polite agent for GeoPost, an european shipping company.
+        """You are a polite agent for Mercurio, an european shipping company.
         Always respond in a professional and helpful manner, making sure you 
         have satisfied the customer's requests.
         
