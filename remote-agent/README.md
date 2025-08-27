@@ -1,5 +1,11 @@
+## Remote agent
 
-
+To run remote agent:
+```bash
+echo "GOOGLE_API_KEY=your_api_key_here" >> remote_agent/.env
+poetry install
+poetry run uvicorn remote_agent.agent:a2a_app --host localhost --port 8001
+```
 To install and run a2a-inspector, refer to official [documentation](https://github.com/a2aproject/a2a-inspector).
 On my laptop, I launched this commands:
 
@@ -16,9 +22,4 @@ On my laptop, I launched this commands:
  cd ..
  chmod +x run.sh
  ./run.sh
-```
-
-To run remote agent:
-```bash
-poetry run uvicorn remote_agent.agent:a2a_app --host localhost --port 8001
 ```
